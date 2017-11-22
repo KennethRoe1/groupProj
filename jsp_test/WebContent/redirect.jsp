@@ -2,14 +2,7 @@
     pageEncoding="ISO-8859-1"%>
 <%@ page import="java.sql.*" %>
 <%@ page import="javax.sql.*" %>
-<% // till have to Redirects from login.jsp, identifies if user is customer,trainer,staff or manager and redirects accordingly %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Redirect</title>
-</head>
-<body>
-
-</body>
-</html>
+<% // till have to Redirects from login.jsp, identifies if user is customer,trainer,staff or manager and redirects accordingly 
+	//SELECT customer.customer_id, users.user_id FROM customer INNER JOIN users ON customer.user_id=users.user_id
+	
+%>
