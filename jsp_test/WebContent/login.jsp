@@ -13,7 +13,8 @@
     rs = st.executeQuery("select * from users where email='" + email + "' and pasword='" + password + "'");
     if (rs.next())
     {
-    	session.setAttribute(rs.getString("user_id"),id);
+    	id=rs.getString("user_id");
+    	session.setAttribute("user_id",id);
     	response.sendRedirect("redirect.jsp");
     }
     else {out.println("Invalid password <a href='index.jsp'>try again</a>");}
