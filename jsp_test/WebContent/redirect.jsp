@@ -23,13 +23,25 @@
     	String cust=rs.getString("customer_id");
     	System.out.println(man+", "+staff+", "+train+", "+cust);
     	if(man != null)
+    	{
     		System.out.println("manager");
+    		response.sendRedirect("homeManager.html");
+    	}
     	if(staff != null)
+    	{
     		System.out.println("staff");
+    		response.sendRedirect("homeFDStaff.html");
+    	}
     	if(train != null)
+    	{
     		System.out.println("trainer");
+    		response.sendRedirect("homeTrainer.html");
+    	}
     	if(cust != null)
+    	{
     		System.out.println("customer");
+    		response.sendRedirect("homeCustomer.html");
+    	}
     }
     
     session.setAttribute("user_id", null);
