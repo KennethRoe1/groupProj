@@ -25,22 +25,22 @@
     	if(man != null)
     	{
     		System.out.println("manager");
-    		response.sendRedirect("homeManager.html");
+    		response.sendRedirect("homeManager.jsp");
     	}
     	if(staff != null)
     	{
     		System.out.println("staff");
-    		response.sendRedirect("homeFDStaff.html");
+    		response.sendRedirect("homeFDStaff.jsp");
     	}
     	if(train != null)
     	{
     		System.out.println("trainer");
-    		response.sendRedirect("homeTrainer.html");
+    		response.sendRedirect("homeTrainer.jsp");
     	}
     	if(cust != null)
     	{
     		System.out.println("customer");
-    		response.sendRedirect("homeCustomer.html");
+    		response.sendRedirect("homeCustomer.jsp");
     	}
     }
 %>
