@@ -24,7 +24,7 @@
 	{
 		Class.forName("com.mysql.jdbc.Driver");
 		String url="jdbc:mysql://localhost:3306/fitness";
-	    con = DriverManager.getConnection(url, "root", "admin");
+	    con = DriverManager.getConnection(url, "root", "");
 	    stmt = con.createStatement();
 	    
 	    //Check to see if the user id (radiobutton) exists in the staff table

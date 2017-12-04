@@ -37,7 +37,7 @@
 	{
 		Class.forName("com.mysql.jdbc.Driver");
 		String url="jdbc:mysql://localhost:3306/fitness";
-	    con = DriverManager.getConnection(url, "root", "admin");
+	    con = DriverManager.getConnection(url, "root", "");
 	    stmt = con.createStatement();
 	    rs = stmt.executeQuery("Select users.user_id, first_name, last_name, email, pasword, dob from users INNER JOIN staff on users.user_id=staff.user_id;");
 	%>
