@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+<link rel="stylesheet" type ="text/css" href= "css/main.css">
+
+<meta charset="utf-8">
+<div style="text-align:center">
+<img src="images/logo.jpg" alt="Gym logo" width="600" height="200"  />
+</div>
+<title>1-2-1 Fitness</title>
+</head>
+
+<div id="nav_bar"> 
+
+  	<ul>
+     <li class="active"><a href=""> HOME </a></li>
+                <li><a href=""> ABOUT </a></li>
+                <li><a href=""> CONTACT </a></li>
+                <li><a href=""> FITNESS CLASSES TIMETABLE </a></li>
+                <li><a href=""> BOOK A CLASS </a></li>
+                <li><a href=""> PERSONAL TRAINERS </a></li>
+ 	</ul>
+</div>
+<body>
+
+<div>
+<img src="images/main.jpg" style="width:100%;">
+
+        
+<form id="form" action="createBooking.jsp" method="post"> 
+				<h2>Create a Booking</h2>
+        <p><label id="usname"  for="bookingDate">Booking Date:</label>
+        <input id="username" type="datetime-local" name="bookingDate" step="7200" required placeholder="date"></p>
+        <p><label  id="usname"for="class">Class:</label><br>
+        <input type="radio" name="class" value="boxercise" required> Boxercise<br>
+  		<input type="radio" name="class" value="spin" required> Spin<br>
+  		<input type="radio" name="class" value="bootcamp" required> BootCamp <br>
+  		<input type="radio" name="class" value="step" required> Step<br>
+  		<input type="radio" name="class" value="pilates" required> Pilates<br>
+        <input type="radio" name="class" value="kettlebells" required> Kettlebells<br>
+  		<input type="radio" name="class" value="hiit" required> HIIT<br>
+  		<input type="radio" name="class" value="olympi_lifting" required> Olympic Lifting <br>
+		<input type="radio" name="class" value="trx" required> TRX<br>
+		<input type="radio" name="class" value="abs_blast" required> Abs Blast<br>
+		</p>
+				
+</form>
+</div>  
+</body>
+</html>

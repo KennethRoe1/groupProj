@@ -4,6 +4,7 @@
 <%@ page import="javax.sql.*" %>
 <% // till have to Redirects from login.jsp, identifies if user is customer,trainer,staff or manager and redirects accordingly 
 	//SELECT customer.customer_id, users.user_id FROM customer INNER JOIN users ON customer.user_id=users.user_id
+	String type ="";
 	session.getAttribute("user_id");
 	String uID=(String)session.getAttribute("user_id");
 	System.out.println(uID);
@@ -24,23 +25,35 @@
     	System.out.println(man+", "+staff+", "+train+", "+cust);
     	if(man != null)
     	{
-    		System.out.println("manager");
-    		response.sendRedirect("homeManager.jsp");
+    		type = "manager";
+    		System.out.println(type+" "+man);
+    		session.setAttribute("user_type",type);
+    		session.setAttribute("manager_id",man);
+    		response.sendRedirect("homeManager.html");
     	}
     	if(staff != null)
     	{
-    		System.out.println("staff");
-    		response.sendRedirect("homeFDStaff.jsp");
+    		type = "staff";
+    		System.out.println(type+" "+staff);
+    		session.setAttribute("user_type",type);
+    		session.setAttribute("staff_id",staff);
+    		response.sendRedirect("homeFDStaff.html");
     	}
     	if(train != null)
     	{
-    		System.out.println("trainer");
-    		response.sendRedirect("homeTrainer.jsp");
+    		type = "trainer";
+    		System.out.println(type+" "+train);
+    		session.setAttribute("user_type",type);
+    		session.setAttribute("trainer_id",train);
+    		response.sendRedirect("homeTrainer.html");
     	}
     	if(cust != null)
     	{
-    		System.out.println("customer");
-    		response.sendRedirect("homeCustomer.jsp");
+    		type = "customer";
+    		System.out.println(type+" "+cust);
+    		session.setAttribute("user_type",type);
+    		session.setAttribute("customer_id",cust);
+    		response.sendRedirect("homeCustomer.html");
     	}
     }
 %>
