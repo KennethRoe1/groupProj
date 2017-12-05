@@ -8,8 +8,7 @@
     Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/fitness","root", "");
     Statement st = con.createStatement();
     ResultSet rs;
-    rs = st.executeQuery("Select * from booking where customer_id ="+id);
-    ResultSetMetaData metaData = rs.getMetaData();
+    rs = st.executeQuery("Select * from booking where customer_id ="+id+" and status_ = 'pending' or 'denied'");
 %>
 <!DOCTYPE html>
 <html>
@@ -27,7 +26,7 @@
   	<li><a href=""> Book a Class </a></li>
   	<li><a href="bookingsCustomer.jsp"> View Bookings </a></li>
     <li><a href=""> View Schedule </a></li>
-    <li><a href=""> Cancel a Class </a></li>
+    <li><a href="cancelBooking.jsp"> Cancel a Class </a></li>
 	<li><a href='logout.jsp'>LOG OUT</a></li>
  	</ul>
 </div>
