@@ -30,7 +30,9 @@
 	<li><a href='logout.jsp'>LOG OUT</a></li>
  	</ul>
 </div>
-<table>
+<fieldset>
+<legend>Bookings</legend>
+<table width="100%">
 <%
 try
 {					
@@ -51,6 +53,7 @@ try
 catch(Exception e1){e1.printStackTrace();}
     %>
 </table>
+</fieldset>
 </body>
 
 </html>

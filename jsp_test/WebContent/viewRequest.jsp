@@ -8,7 +8,7 @@
     Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/fitness","root", "");
     Statement st = con.createStatement();
     ResultSet rs;
-    rs = st.executeQuery("Select * from booking where customer_id ="+id+" and status_ = 'accepted'");
+    rs = st.executeQuery("Select * from booking where  status_ = 'pending'");
 %>
 <!DOCTYPE html>
 <html>
@@ -23,20 +23,19 @@
 </div>
 <div id="nav_bar"> 
   	<ul>
-  	<li><a href=""> Book a Class </a></li>
-  	<li><a href="bookingsCustomer.jsp"> View Bookings </a></li>
-    <li><a href="scheduleCustomer.jsp"> View Schedule </a></li>
-    <li><a href="cancelBooking.jsp"> Cancel a Class </a></li>
+    <li><a href=""> create booking</a></li>
+    <li><a href="viewRequest.jsp"> View requests </a></li>
+    <li><a href="trainerSchedule"> View trainer timetable </a></li>
 	<li><a href='logout.jsp'>LOG OUT</a></li>
  	</ul>
 </div>
 <fieldset>
-<legend>Schedule</legend>
+<legend>Bookings</legend>
 <table width="100%">
 <%
 try
 {					
-	while(rs.next()){
+	while(rs.next()){ System.out.println(rs.getString("booking_num"));
 		%>
 		<tr>
 		<td><%=rs.getString("booking_num") %></td>
@@ -48,7 +47,6 @@ try
 		<td><%=rs.getString("status_") %></td>
 		</tr>
 		<%
-		
 	}
 }
 catch(Exception e1){e1.printStackTrace();}
@@ -56,5 +54,4 @@ catch(Exception e1){e1.printStackTrace();}
 </table>
 </fieldset>
 </body>
-
 </html>
