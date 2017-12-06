@@ -8,7 +8,7 @@
     Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/fitness","root", "");
     Statement st = con.createStatement();
     ResultSet rs;
-    rs = st.executeQuery("Select * from booking where customer_id ="+id+" and status_ = 'pending' or 'denied'");
+    rs = st.executeQuery("Select * from booking where customer_id ="+id+" and status_ = 'accepted'");
 %>
 <!DOCTYPE html>
 <html>

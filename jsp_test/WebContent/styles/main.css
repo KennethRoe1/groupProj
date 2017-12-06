@@ -93,31 +93,16 @@ body
 }
 
 #button2:hover{background:silver;}
-#line
-{
-	color:#0055bd;
-	text-align: center;
-}
-#try
-{
-position:relative;	
-background-image:"images/main.jpg";
-}
+
 #Table
 {
 	margin:auto;
 	margin-top:15px;
 	width: 65%;
 }
-fieldset
-{
-	color: #ffffff;
-}
-label
-{
-	color: #ffffff;
-}
-label:after { content: ": "; }
+fieldset{color: #ffffff;}
+label{color: #ffffff;}
+label:after{content: ": ";}
 
 table, th, td
 {
@@ -130,15 +115,6 @@ table, th, td
 th
 {
 	text-align: left;
-}
-#report
-{
-	border:1px solid black;
-	height:150px;
-	width:500px;
-	background-color:#0055bd;
-	margin:auto;
-	margin-top:15px;
 }
 
 

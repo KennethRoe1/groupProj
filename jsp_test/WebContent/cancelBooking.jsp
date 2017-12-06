@@ -28,7 +28,7 @@ int count=0;
   	<ul>
   	<li><a href=""> Book a Class </a></li>
   	<li><a href="bookingsCustomer.jsp"> View Bookings </a></li>
-    <li><a href=""> View Schedule </a></li>
+    <li><a href="scheduleCustomer.jsp"> View Schedule </a></li>
     <li><a href="cancelBooking.jsp"> Cancel a Class </a></li>
 	<li><a href='logout.jsp'>LOG OUT</a></li>
  	</ul>
