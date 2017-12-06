@@ -1,31 +1,27 @@
 <%@ page import="java.sql.*, javax.sql.*" %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Delete Staff Page</title>
-<link rel="stylesheet" type="text/css" href="styles/121fitness.css">
-<link rel="shortcut icon" href="images/logo.jpg">
+<link rel="stylesheet" type ="text/css" href= "styles/main.css">
+<meta charset="utf-8">
+<title>1-2-1 Fitness</title>
 </head>
-
 <body>
-
-<header>
-		<div class="banner">
-				<h2>1-2-1 Fitness</h2>
-				<h3>Are you ready</h3>
-				<h1>For the training session of your life?</h1>
-				<ul>
-					<li><a href='home'>Home</a></li>
-					<li><a href='about'>About Us</a></li>
-					<li><a href='book'>Make a Booking</a></li>
-					<li><a href='equipment'>Equipment</a></li>
-				</ul>
-		</div>
-</header>
-
+<div class="banner">
+<img src="images/head.JPG" alt="Gym logo" width="60%" height="180"/>
+</div>
+<div id="nav_bar">
+  	<ul>
+  	<li><a href="userinfo.jsp">Account Info</a></li>
+    <li><a href="AddStaff.html">Add Staff</a></li>
+	<li><a href="DeleteStaff.jsp">Delete Staff</a></li>
+	<li><a href="FitnessClasses.html">Update Staff Details</a></li>
+	<li><a href="ContactUs.html">View Staff Details</a></li>
+	<li><a href='logout.jsp'>Log Out</a></li>
+ 	</ul>
+</div>
 <form action="DeleteStaff1.jsp" method="get" name="delete_staff_form" id="delete_staff_form">
 	<%
 	Connection con = null;
@@ -43,7 +39,7 @@
 	%>
 	<div class="delete_staff_table">
 	<fieldset>
-		<legend>Delete Staff</legend>
+		<legend style="color:#ffffff;">Delete Staff</legend>
 		<table width="100%">
 
 			<tr><th>First_Name</th><th>Last_Name</th><th>Email</th><th>Password</th><th>DOB</th><th>Type</th><th>Select</th></tr>
@@ -95,9 +91,9 @@
 
 <div class="delete_staff_buttons">
 	<fieldset id="buttons">
-		<legend>Delete Selected Staff</legend>
+		<legend style="color:white;">Delete Selected Staff</legend>
 		<input type="submit" id="delete" value="delete">
-		<a href="ManageStaff.html"><input type="button" id="cancel" value="cancel"></a>
+		<a href="homeManager.html"><input type="button" id="cancel" value="cancel"></a>
 	</fieldset>
 </div>
 </form>

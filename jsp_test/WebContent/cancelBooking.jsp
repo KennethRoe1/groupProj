@@ -32,7 +32,6 @@ int count=0;
  	</ul>
 </div>
 <form action="deleteBooking.jsp" method="get" name="delete_booking_form" id="delete_booking_form">
-	<div class=>
 	<fieldset>
 		<legend>Delete Staff</legend>
 		<table width="100%">
@@ -44,29 +43,21 @@ int count=0;
 			<td><%=rs.getString("booking_num")%></td><td><%=rs.getString("date_")%></td><td><%=rs.getString("start_time")%></td><td><%=rs.getString("finish_time")%></td><td><%=rs.getString("catagory")%></td><td><%=rs.getString("status_")%></td>
 			<td><input type="radio" name="radioButton" value=<%=rs.getString("user_id")%>></td>
 			</tr>
-			<% count++; %>
-			<% } %>
+			<% count++;
+			}
 			
-			<%rs.close();%>
-			<%st.close();%>
-			<%con.close();%>
+			rs.close();
+			st.close();
+			con.close();%>
 	
 			</table>
 			</fieldset>
-		</div>
-	<br>
-	
+	<% }
+	catch (SQLException se) {se.getMessage();} %>
 
-	<% } catch (SQLException se) { %>
-	<%= se.getMessage() %>
-	<% } %>
-
-<div class="delete_staff_buttons">
-	<fieldset id="buttons">
-		<legend>Delete Selected Staff</legend>
+<div class="delete_booking_button">
 		<input type="submit" id="delete" value="delete">
-		<a href="ManageStaff.html"><input type="button" id="cancel" value="cancel"></a>
-	</fieldset>
+		<a href="cancelBooking.html"><input type="button" id="cancel" value="cancel"></a>
 </div>
 </form>
 </body>

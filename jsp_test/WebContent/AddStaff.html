@@ -1,41 +1,39 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
-<title>Add Staff Form</title>
-<link rel="stylesheet" type="text/css" href="styles/121fitness.css">
-<link rel="shortcut icon" href="images/logo.jpg">
+<link rel="stylesheet" type ="text/css" href= "styles/main.css">
+<meta charset="utf-8">
+<title>1-2-1 Fitness</title>
 </head>
 <body>
-<header>
-	<div class="banner">
-				<h2>1-2-1 Fitness</h2>
-				<h3>Are you ready</h3>
-				<h1>For the training session of your life?</h1>
-				<ul>
-					<li><a href='home'>Home</a></li>
-					<li><a href='about'>About Us</a></li>
-					<li><a href='book'>Make a Booking</a></li>
-					<li><a href='equipment'>Equipment</a></li>
-				</ul>
-		</div>
-</header>
-
+<div class="banner">
+<img src="images/head.JPG" alt="Gym logo" width="60%" height="180"/>
+</div>
+<div id="nav_bar">
+  	<ul>
+  	<li><a href="userinfo.jsp">Account Info</a></li>
+    <li><a href="AddStaff.html">Add Staff</a></li>
+	<li><a href="DeleteStaff.jsp">Delete Staff</a></li>
+	<li><a href="FitnessClasses.html">Update Staff Details</a></li>
+	<li><a href="ContactUs.html">View Staff Details</a></li>
+	<li><a href='logout.jsp'>Log Out</a></li>
+ 	</ul>
+</div>
 <form action="AddStaff.jsp" method="get" name="add_staff_form" id="add_staff_form">
 <div class="input_staff_info">
 	<fieldset>
-		<legend>Add Staff</legend>
-		<label for="first_name">First Name</label>
-		<input type="text" name="first_name" id="first_name" autofocus><br>
-		<label for="last_name">Last Name</label>
+		<legend style="color:white;">Add Staff</legend>
+		<label style="color:white;" for="first_name">First Name</label>
+		<input  type="text" name="first_name" id="first_name" autofocus><br>
+		<label style="color:white;" for="last_name">Last Name</label>
 		<input type="text" name="last_name" id="last_name"><br>
-		<label for="email">Email</label>
+		<label style="color:white;" for="email">Email</label>
 		<input type="text" name="email" id="email"><br>
-		<label for="password">Password</label>
+		<label style="color:white;" for="password">Password</label>
 		<input type="password" name="password" id="password"><br>
-		<label for="dob">Date of Birth</label>
+		<label style="color:white;" for="dob">Date of Birth</label>
 		<input type="text" name="Date_of_Birth" id="Date_of_Birth"><br>
-		<label for="role">Role</label>
+		<label style="color:white;" for="role">Role</label>
 		<select name = "role">
 			<option value = "Front Desk Staff">Front Desk Staff</option>
 			<option value = "Personal Trainer">Personal Trainer</option>
@@ -46,12 +44,11 @@
 </div>
 <div class="input_staff_info_buttons">
 	<fieldset id="buttons">
-		<legend>Submit Your Registration</legend>
+		<legend style="color:white;">Submit Your Registration</legend>
 		<input type="submit" id="submit" value="submit">
-		<a href="ManageStaff.html"><input type="button" id="cancel" value="cancel"></a>
+		<a href="homeManager.html"><input type="button" id="cancel" value="cancel"></a>
 	</fieldset>
 </div>
 </form>
-
 </body>
 </html>
