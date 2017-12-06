@@ -39,7 +39,7 @@
 	%>
 	<div class="delete_staff_table">
 	<fieldset>
-		<legend style="color:#ffffff;">Delete Staff</legend>
+		<legend>Delete Staff</legend>
 		<table width="100%">
 
 			<tr><th>First_Name</th><th>Last_Name</th><th>Email</th><th>Password</th><th>DOB</th><th>Type</th><th>Select</th></tr>
@@ -91,7 +91,7 @@
 
 <div class="delete_staff_buttons">
 	<fieldset id="buttons">
-		<legend style="color:white;">Delete Selected Staff</legend>
+		<legend>Delete Selected Staff</legend>
 		<input type="submit" id="delete" value="delete">
 		<a href="homeManager.html"><input type="button" id="cancel" value="cancel"></a>
 	</fieldset>
