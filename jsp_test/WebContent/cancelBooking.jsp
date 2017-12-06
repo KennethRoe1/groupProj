@@ -3,6 +3,8 @@
 <%@ page import="java.sql.*" %>
 <%@ page import="javax.sql.*" %>
 <%
+try
+{
 int count=0;
     String id=(String)session.getAttribute("customer_id");
     Class.forName("com.mysql.jdbc.Driver");
@@ -33,15 +35,19 @@ int count=0;
 </div>
 <form action="deleteBooking.jsp" method="get" name="delete_booking_form" id="delete_booking_form">
 	<fieldset>
-		<legend>Delete Staff</legend>
+		<legend>Delete booking</legend>
 		<table width="100%">
-	<%try
-	{
-			 while (rs.next()) {%>
-
+		<tr><th>number</th><th>date</th><th>start</th><th>finish</th><th>catagory</th><th>status</th><th>Select</th></tr>
+			<% while (rs.next())
+			 {%>
 			<tr>
-			<td><%=rs.getString("booking_num")%></td><td><%=rs.getString("date_")%></td><td><%=rs.getString("start_time")%></td><td><%=rs.getString("finish_time")%></td><td><%=rs.getString("catagory")%></td><td><%=rs.getString("status_")%></td>
-			<td><input type="radio" name="radioButton" value=<%=rs.getString("user_id")%>></td>
+			<td><%=rs.getString("booking_num")%></td>
+			<td><%=rs.getString("date_")%></td>
+			<td><%=rs.getString("start_time")%></td>
+			<td><%=rs.getString("finish_time")%></td>
+			<td><%=rs.getString("catagory")%></td>
+			<td><%=rs.getString("status_")%></td>
+			<td><input type="radio" name="radioButton" value=<%=rs.getString("booking_num")%>></td>
 			</tr>
 			<% count++;
 			}
@@ -49,7 +55,6 @@ int count=0;
 			rs.close();
 			st.close();
 			con.close();%>
-	
 			</table>
 			</fieldset>
 	<% }
