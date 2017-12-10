@@ -8,7 +8,7 @@
     Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/fitness","root", "");
     Statement st = con.createStatement();
     ResultSet rs;
-    rs = st.executeQuery("Select * from booking where  status_ = 'pending'");
+    rs = st.executeQuery("Select * from booking where  status_ = 'accepted'");
 %>
 <!DOCTYPE html>
 <html>
@@ -50,7 +50,7 @@ try
 	}
 }
 catch(Exception e1){e1.printStackTrace();}
-    %>
+%>
 </table>
 </fieldset>
 </body>
