@@ -1,29 +1,25 @@
-<!doctype html>
-<html><head>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--
+// Cross-Browser Rich Text Editor
 
-<title>1-2-1 Fitness</title>
-<meta charset="utf-8">
-
-<link rel="stylesheet" type ="text/css" href= "styles/main.css">
-	<script language="JavaScript" type="text/javascript" src="texteditor/cbrte/html2xhtml.min.js"></script>
-	<script language="JavaScript" type="text/javascript" src="texteditor/cbrte/richtext.js"></script>
+// License: http://creativecommons.org/licenses/by/2.5/
+//-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<title>Cross-Browser Rich Text Editor (RTE)</title>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<meta name="author" content="Kevin Roth" />
+	<meta name="ROBOTS" content="ALL" />
+	<!-- html2xhtml.js written by Jacob Lee <letsgolee@lycos.co.kr> //-->
+	<script language="JavaScript" type="text/javascript" src="cbrte/html2xhtml.min.js"></script>
+	<script language="JavaScript" type="text/javascript" src="cbrte/richtext.js"></script>
 </head>
-
 <body>
-<div class="banner">
-<img src="images/head.JPG" alt="Gym logo" width="60%" height="180"/>
-</div>
-<div id="nav_bar"> 
-  	<ul>
-    <li><a href="trainerSchedule.jsp"> View Schedule </a></li>
-    <li><a href="report.html"> Report </a></li>
-    <li><a href="logout.jsp"> Log Out </a></li>
- 	</ul>
-</div>
 
-
-<div>
-<form name="RTEDemo" action="report.html" method="post" onsubmit="return submitForm();">
+<!-- START Demo Code -->
+<form name="RTEDemo" action="demo.htm" method="post" onsubmit="return submitForm();">
 <script language="JavaScript" type="text/javascript">
 <!--
 function submitForm() {
@@ -36,7 +32,7 @@ function submitForm() {
 }
 
 //Usage: initRTE(imagesPath, includesPath, cssFile, genXHTML, encHTML)
-initRTE("texteditor/cbrte/images/", "texteditor/cbrte/", "", true);
+initRTE("cbrte/images/", "cbrte/", "", true);
 //-->
 </script>
 <noscript><p><b>Javascript must be enabled to use this form.</b></p></noscript>
@@ -98,9 +94,6 @@ rte1.build();
 </form>
 <!-- END Demo Code -->
 
-</div>
-
 
 </body>
-
 </html>

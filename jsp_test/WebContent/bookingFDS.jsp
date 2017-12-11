@@ -52,7 +52,7 @@
 		</select>
 		<br>
 		Customer:<select name = "customerID">
-		<%while(rs.next()){System.out.println(rs.getString("customer_id"));%>
+		<%while(rs.next()){%>
 			<option value=<%= rs.getString("customer_id") %>><%= rs.getString("name") %></option>
 			<%}%>
 		</select>
