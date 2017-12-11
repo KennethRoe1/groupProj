@@ -5,7 +5,7 @@
 
 <meta charset="utf-8">
 
-<title>1-2-1 Fitness: Booking</title>
+<title>1-2-1 Fitness</title>
 </head>
 
 <body>
@@ -21,11 +21,9 @@
 	<li><a href='logout.jsp'>LOG OUT</a></li>
  	</ul>
 </div>
-<div>
-        
+<fieldset>
+<legend>Create a Booking</legend>
 <form id="form" action="CreateBooking2.jsp" method="get"> 
-				<h2>Create a Booking</h2>
-        <p>
         <label id="usname"  for="bookingDate">Booking Date:</label><input id="username" type="date" name="bookingDate"><br>
         <label id="start_time" for="start_time">Start Time:</label><input type="time" name="start_time"><br>
 		<label id="finish_time" for="finish_time">Finish Time:</label><input type="time" name="finish_time"><br>
@@ -41,9 +39,8 @@
   		<option value="Lifting">Lifting</option>
 		<option value="TRX">TRX</option>
 		</select>
-		</p> 
 		<input type="submit" value="Submit" />
 </form>
-</div>
+</fieldset>
 </body>
 </html>

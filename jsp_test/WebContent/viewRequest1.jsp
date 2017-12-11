@@ -5,48 +5,29 @@
 <%
     String id=(String)session.getAttribute("staff_id");
 	String bNum = request.getParameter("radioButton");
-	System.out.println(bNum);
+	String status = request.getParameter("select_status");
 	String tID = request.getParameter("trainerID");
+	System.out.println(bNum);
+	System.out.println(status);
+	System.out.println(tID);
     Class.forName("com.mysql.jdbc.Driver");
     Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/fitness","root", "");
     Statement st = con.createStatement();
     ResultSet rs;
+    try
+	{
+    	if(status.equals("accept"))
+    	{
+    		st.executeUpdate("INSERT INTO session_(booking_num, trainer_id) VALUES("+bNum+","+tID+");");
+        	st.executeUpdate("Update booking set status_='accepted' where booking_num="+bNum);
+    	}
+    	else if(status.equals("decline"))
+    	{
+    		st.executeUpdate("Update booking set status_='declined' where booking_num="+bNum);
+    	}
+    	else
+    	{System.out.println("error with selection");};
+	}
+	catch(Exception e1){e1.getMessage();}
+    response.sendRedirect("viewRequest.jsp");
 %>
-<!DOCTYPE html>
-<html>
-<head>
-<link rel="stylesheet" type ="text/css" href= "styles/main.css">
-<meta charset="utf-8">
-<title>1-2-1 Fitness</title>
-</head>
-<body>
-<div class="banner">
-<img src="images/head.JPG" alt="Gym logo" width="60%" height="180"/>
-</div>
-<div id="nav_bar"> 
-  	<ul>
-    <li><a href=""> CREATE BOOKING </a></li>
-    <li><a href="viewRequest.jsp"> VIEW REQUESTS </a></li>
-    <li><a href="trainerScheduleFDS.jsp"> VIEW TRAINER TIMETABLE </a></li>
-	<li><a href='logout.jsp'>LOG OUT</a></li>
- 	</ul>
-</div>
-<table>
-<%
-	rs = st.executeQuery("Select trainer_id, concat(first_name, ' ', last_name) as name from trainers where trainer_id="+tID);
-	while(rs.next())
-	{%>
-		<td><%=rs.getString("trainer_id")%></td>
-		<td><%=rs.getString("name")%></td>
-<% }%>
-</table>
-<table>
-<%
-	rs = st.executeQuery("Select booking_num from booking where booking_num ="+bNum);
-	while(rs.next())
-	{%>
-		<td><%=rs.getString("booking_num")%></td>
-<% }%>
-</table>
-</body>
-</html>

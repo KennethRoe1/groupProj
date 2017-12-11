@@ -16,9 +16,7 @@
 	String className = request.getParameter("catagory");
 	String startTime = request.getParameter("start_time");
 	String finishTime = request.getParameter("finish_time");
-	String uID=(String)session.getAttribute("user_id");
-	String cID=(String)session.getAttribute("customer_id");
-	int user_Id = Integer.parseInt(uID.trim());
+	String cID=request.getParameter("customerID");
 	
 	
 	try
@@ -34,5 +32,5 @@
 		stmt.executeUpdate("INSERT INTO booking(customer_id, date_, start_time, finish_time,catagory,status_) VALUES("+cID+",'"+bookingDate+"','"+startTime+"','"+finishTime+"','"+className+"','pending');");
 	}
 	catch(Exception e1){e1.getMessage();}
-	response.sendRedirect("bookingsCustomer.jsp");
+	response.sendRedirect("viewRequest.jsp");
 %> 
