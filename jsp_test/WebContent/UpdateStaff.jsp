@@ -6,7 +6,7 @@
 <head>
 <link rel="stylesheet" type ="text/css" href= "styles/main.css">
 <meta charset="utf-8">
-<title>1-2-1 Fitness</title>
+<title>1-2-1 Fitness: Update Staff</title>
 </head>
 <body>
 <div class="banner">
@@ -21,7 +21,7 @@
 	<li><a href='logout.jsp'>Log Out</a></li>
  	</ul>
 </div>
-<form action="DeleteStaff1.jsp" method="get" name="delete_staff_form" id="delete_staff_form">
+<form action="UpdateStaff1.jsp" method="get" name="update_staff_form" id="update_staff_form">
 	<%
 	Connection con = null;
 	Statement stmt = null;
@@ -36,9 +36,12 @@
 	    stmt = con.createStatement();
 	    rs = stmt.executeQuery("Select users.user_id, first_name, last_name, email, pasword, dob from users INNER JOIN staff on users.user_id=staff.user_id;");
 	%>
-	<div class="delete_staff_table">
+	<div class="update_staff_table">
 	<fieldset>
-		<legend>Delete Staff</legend>
+	<br>
+	<br>
+	<br>
+		<legend>Update Staff</legend>
 		<table width="100%">
 
 			<tr><th>First_Name</th><th>Last_Name</th><th>Email</th><th>Password</th><th>DOB</th><th>Type</th><th>Select</th></tr>
@@ -88,10 +91,10 @@
 	<%= se.getMessage() %>
 	<% } %>
 
-<div class="delete_staff_buttons">
+<div class="update_staff_buttons">
 	<fieldset id="buttons">
-		<legend>Delete Selected Staff</legend>
-		<input type="submit" id="delete" value="delete">
+		<legend>Update Selected Staff</legend>
+		<input type="submit" id="update" value="update">
 		<a href="homeManager.html"><input type="button" id="cancel" value="cancel"></a>
 	</fieldset>
 </div>

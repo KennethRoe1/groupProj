@@ -6,7 +6,7 @@
 <head>
 <link rel="stylesheet" type ="text/css" href= "styles/main.css">
 <meta charset="utf-8">
-<title>1-2-1 Fitness</title>
+<title>1-2-1 Fitness: View Staff</title>
 </head>
 <body>
 <div class="banner">
@@ -21,7 +21,7 @@
 	<li><a href='logout.jsp'>Log Out</a></li>
  	</ul>
 </div>
-<form action="DeleteStaff1.jsp" method="get" name="delete_staff_form" id="delete_staff_form">
+
 	<%
 	Connection con = null;
 	Statement stmt = null;
@@ -38,16 +38,18 @@
 	%>
 	<div class="delete_staff_table">
 	<fieldset>
-		<legend>Delete Staff</legend>
+	<br>
+	<br>
+	<br>
+		<legend>View Staff</legend>
 		<table width="100%">
 
-			<tr><th>First_Name</th><th>Last_Name</th><th>Email</th><th>Password</th><th>DOB</th><th>Type</th><th>Select</th></tr>
+			<tr><th>First_Name</th><th>Last_Name</th><th>Email</th><th>Password</th><th>DOB</th><th>Type</th></tr>
 	
 			<% while (rs.next()) {%>
 
 			<tr>
 			<td><%=rs.getString("first_name")%></td><td><%=rs.getString("last_name")%></td><td><%=rs.getString("email")%></td><td><%=rs.getString("pasword")%></td><td><%=rs.getString("dob")%></td><td>Front Desk Staff</td>
-			<td><input type="radio" name="radioButton" value=<%=rs.getString("user_id")%>></td>
 			</tr>
 			<% count++; %>
 			<% } %>
@@ -58,7 +60,6 @@
 
 			<tr>
 			<td><%=rs.getString("first_name")%></td><td><%=rs.getString("last_name")%></td><td><%=rs.getString("email")%></td><td><%=rs.getString("pasword")%></td><td><%=rs.getString("dob")%></td><td>Personal Trainer</td>
-			<td><input type="radio" name="radioButton" value=<%=rs.getString("user_id")%>></td>
 			</tr>
 			<% count++; %>
 			<% } %>
@@ -69,7 +70,6 @@
 
 			<tr>
 			<td><%=rs.getString("first_name")%></td><td><%=rs.getString("last_name")%></td><td><%=rs.getString("email")%></td><td><%=rs.getString("pasword")%></td><td><%=rs.getString("dob")%></td><td>Manager</td>
-			<td><input type="radio" name="radioButton" value=<%=rs.getString("user_id")%>></td>
 			</tr>
 			<% count++; %>
 			<% } %>
@@ -90,11 +90,10 @@
 
 <div class="delete_staff_buttons">
 	<fieldset id="buttons">
-		<legend>Delete Selected Staff</legend>
-		<input type="submit" id="delete" value="delete">
+		<legend>View Staff</legend>
+		<a href="homeManager.html"><input type="submit" id="return" value="return">
 		<a href="homeManager.html"><input type="button" id="cancel" value="cancel"></a>
 	</fieldset>
 </div>
-</form>
 </body>
 </html>

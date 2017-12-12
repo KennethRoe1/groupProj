@@ -33,14 +33,19 @@
 <fieldset>
 <legend>Schedule</legend>
 <table width="100%">
+<tr>
+<th>Date</th>
+<th>Start</th>
+<th>Finish</th>
+<th>Training</th>
+<th>Status</th>
+</tr>
 <%
 try
 {					
 	while(rs.next()){
 		%>
 		<tr>
-		<td><%=rs.getString("booking_num") %></td>
-		<td><%=rs.getString("customer_id") %></td>
 		<td><%=rs.getString("date_") %></td>
 		<td><%=rs.getString("start_time") %></td>
 		<td><%=rs.getString("finish_time") %></td>
