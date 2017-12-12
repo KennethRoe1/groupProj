@@ -82,7 +82,7 @@
 	<% } %>
 	
 	<%
-	String redirectURL = "ManageStaff.html";
+	String redirectURL = "homeManager.html";
 	response.sendRedirect(redirectURL);
 	%>
 </body>
